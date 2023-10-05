@@ -7,20 +7,6 @@ GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
 ### Recuperar todas las películas por un género
 GET http://localhost:1234/movies?genre=action
 
-### Recuperar todas las películas a partir de un año
-GET http://localhost:1234/movies?year=2010
-
-### Recuperar todas las películas por un director
-GET http://localhost:1234/movies?director=ridley scott
-
-### Recuperar todas las películas a partir de una puntuación
-GET http://localhost:1234/movies?rate=9
-
-### Recuperar todas las películas a partir de una duración
-GET http://localhost:1234/movies?duration=190
-
-
-
 ### Añadir una película con POST
 POST http://localhost:1234/movies
 Content-Type: application/json
@@ -51,5 +37,5 @@ PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
 Content-Type: application/json
 
 {
-  "year": 1993
+  "year": 2023
 }
