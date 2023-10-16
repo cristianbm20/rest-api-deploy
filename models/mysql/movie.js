@@ -16,7 +16,7 @@ const PROD_CONFIG = {
   database: process.env.DATABASE_NAME
 }
 
-const connectionString = PROD_CONFIG ?? DEFAULT_CONFIG
+const connectionString = process.env.DATABASE_HOST ? PROD_CONFIG : DEFAULT_CONFIG
 
 const connection = await mysql.createConnection(connectionString)
 
