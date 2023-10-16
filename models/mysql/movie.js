@@ -8,7 +8,7 @@ const DEFAULT_CONFIG = {
   database: 'moviesdb'
 }
 
-const connectionString = process.env.DATABASE_URL ?? DEFAULT_CONFIG
+const connectionString = (process.env.DATABASE_URL ?? DEFAULT_CONFIG) && (process.env.PORT ?? DEFAULT_CONFIG)
 
 const connection = await mysql.createConnection(connectionString)
 
