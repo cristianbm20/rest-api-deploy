@@ -1,12 +1,12 @@
 import mysql from 'mysql2/promise'
 
-const DEFAULT_CONFIG = {
-  host: 'localhost',
-  user: 'root',
-  port: 3306,
-  password: '',
-  database: 'moviesdb'
-}
+// const DEFAULT_CONFIG = {
+//   host: 'localhost',
+//   user: 'root',
+//   port: 3306,
+//   password: '',
+//   database: 'moviesdb'
+// }
 
 const PROD_CONFIG = {
   host: process.env.DATABASE_HOST,
@@ -16,7 +16,7 @@ const PROD_CONFIG = {
   database: process.env.DATABASE_NAME
 }
 
-const connectionString = process.env.DATABASE_HOST ? PROD_CONFIG : DEFAULT_CONFIG
+const connectionString = PROD_CONFIG
 
 const connection = await mysql.createConnection(connectionString)
 
