@@ -8,15 +8,15 @@ import mysql from 'mysql2/promise'
 //   database: 'moviesdb'
 // }
 
-const PROD_CONFIG = {
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USERNAME,
-  port: process.env.PORT,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME
-}
+// const PROD_CONFIG = {
+//   host: process.env.DATABASE_HOST,
+//   user: process.env.DATABASE_USERNAME,
+//   port: process.env.PORT,
+//   password: process.env.DATABASE_PASSWORD,
+//   database: process.env.DATABASE_NAME
+// }
 
-const connectionString = PROD_CONFIG
+const connectionString = process.env.DATABASE_URL
 
 const connection = await mysql.createConnection(connectionString)
 
