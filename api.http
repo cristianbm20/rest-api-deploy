@@ -1,8 +1,8 @@
 ### Recuperar todas las películas
-GET http://localhost:8080/movies
+GET http://localhost:1234/movies
 
 ### Recuperar una película por ID
-GET http://localhost:1234/movies/32de38e2-6c0f-11ee-9cf4-3a2862bd4441
+GET http://localhost:1234/movies/1fca8e18-6c14-11ee-8e50-762ebd6a8e52
 
 ### Recuperar todas las películas por un género
 GET http://localhost:1234/movies?genre=sci-fi
