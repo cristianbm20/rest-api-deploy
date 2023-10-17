@@ -2,7 +2,7 @@
   "name": "rest-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server-mysql.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "start:mysql": "node --watch server-mysql.js",
