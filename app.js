@@ -1,10 +1,7 @@
 import express, { json } from 'express'
 import { createMovieRouter } from './routes/movies.js'
 import { corsMiddleware } from './middlewares/cors.js'
-
-if (process.env.NODE_ENV !== 'production') {
-  import('dotenv/config.js')
-}
+// import 'dotenv/config.js'
 
 export const createApp = ({ movieModel }) => {
   const app = express()
