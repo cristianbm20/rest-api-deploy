@@ -72,7 +72,14 @@ export class MovieModel {
     const genreQuery = 'INSERT INTO movie_genres (movie_id, genre_id) VALUES ((SELECT id FROM movies WHERE title = ?), (SELECT id FROM genres WHERE name = ?));'
 
     try {
-      await connection.query(insertQuery, [title, year, director, duration, poster, rate])
+      await connection.query(insertQuery, [
+        title,
+        year,
+        director,
+        duration,
+        poster,
+        rate
+      ])
 
       genreInput.map(async (genero) => {
         await connection.query(genreQuery, [title, genero])
@@ -123,7 +130,14 @@ export class MovieModel {
     } = input
 
     const updateQuery = 'UPDATE movies SET title = ?, year = ?, director = ?, duration = ?, poster = ?, rate = ? WHERE id = UUID_TO_BIN(?);'
-    await connection.query(updateQuery, [title ?? '', year ?? '', director ?? '', duration ?? '', poster ?? '', rate ?? 5])
+    await connection.query(updateQuery, [
+      title ?? '',
+      year ?? '',
+      director ?? '',
+      duration ?? '',
+      poster ?? '',
+      rate ?? 5
+    ])
 
     if (genreInput) {
       const deleteGenre = 'DELETE FROM movie_genres WHERE movie_id = UUID_TO_BIN(?);'
